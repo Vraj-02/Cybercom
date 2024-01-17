@@ -1,0 +1,14 @@
+body {
+    background-color: lightgrey;
+}
+
+p {text-align: center;}
+
+img{
+    border-radius: 50%;
+}
+
+.review{
+    box-shadow: 2px 2px 2px 2px rgb(194, 191, 191);
+    padding: 20px;
+}
