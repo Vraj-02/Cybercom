@@ -1,0 +1,27 @@
+.wrap {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+}
+.yadd,
+.addet,
+.intr
+{
+    text-align: center;
+    border: 3px solid rgb(97, 94, 94);
+    padding-left: 5px;    
+}
+.sub{
+    width: fit-content;
+    margin: auto;
+    border: 3px solid black;
+    padding: 5px;
+}
+table{
+    text-align: left;
+    border-spacing: 0px 15px;
+}
+th{
+    width: 200px;
+    
+}
