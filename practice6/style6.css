@@ -3,11 +3,11 @@
     width: 60%;
     margin: auto;
 }
-.yadd,
-.addet,
-.intr
-{
-    text-align: center;
+legend{
+    text-align: left;
+}
+fieldset
+{   
     border: 3px solid rgb(97, 94, 94);
     padding-left: 5px;    
 }
@@ -16,6 +16,7 @@
     margin: auto;
     border: 3px solid black;
     padding: 5px;
+    background-color: aquamarine;
 }
 table{
     text-align: left;
@@ -23,5 +24,4 @@ table{
 }
 th{
     width: 200px;
-    
 }

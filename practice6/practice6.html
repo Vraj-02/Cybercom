@@ -10,8 +10,8 @@
  <div class="wrap">
     <form action="Success.html">
         <br><br>
-        <div class="yadd">
-            <b>Your Address</b>
+        <fieldset>
+            <legend><b>Your Address</b></legend>
             <br>
             <table>
                 <tr>
@@ -31,10 +31,10 @@
                     <td><input type="text"></td>
                 </tr>
             </table>
-        </div>
-        <br><br>
-        <div class="addet">
-            <b>Additional Details</b>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Additional Details</b></legend>
             <br>
             <table>
                 <tr>
@@ -57,23 +57,25 @@
                     </td>
                 </tr>
             </table>
-        </div>
-        <br><br>
-        <div class="intr">
-            <b>Introduction</b>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend><b>Introduction</b></legend>
             <br>
             <table>
                 <tr>
                     <th style="text-align: start;"> Hobbies </th>
-                    <td id="chk">
-                        <input type="checkbox">playing soccer<br>
-                        <input type="checkbox">dancing<br>
-                        <input type="checkbox">Gardening<br>
-                        <input type="checkbox">Watching movies<br>
+                    <td>
+                        <select name="hobbies" id="hobbies" multiple="">
+                            <option value="playing_soccer">Playing soccer</option>
+                            <option value="dancing">Dancing</option>
+                            <option value="gardening">Gardening</option>
+                            <option value="watching_movies">Watching movies</option>
+                        </select>
                     </td>
                 </tr>
                 <tr>
-                    <th>Favroute Car?</th>
+                    <th>Favourite Car?</th>
                     <td>
                         <select>
                         <option value="Volvo">Volvo</option>
@@ -84,19 +86,24 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>Favroute Public Transport?</th>
+                    <th>Favourite Public Transport?</th>
                     <td>
-                        <b>Ground</b><br>
-                        <input type="radio" name="grn">Bus<br>
-                        <input type="radio" name="grn">Train<br>
-                        <b>Sea</b><br>
-                        <input type="radio" name="se">Boat<br>
-                        <input type="radio" name="se">Cruise<br>
+                        <select class="transport" size="4">
+                            <optgroup label="Ground">
+                              <option>Train</option>
+                              <option>Bus</option>
+                            </optgroup>
+                            <optgroup label="Water">
+                              <option>Ship</option>
+                              <option>Airboat</option>
+                              <option>Hovecraft</option>
+                            </optgroup>
+                          </select>
                     </td>
                 </tr>
 
             </table>
-        </div>
+        </fieldset>
         <br>
         <div class="sub">
         <input type="submit" value="submit">&nbsp;&nbsp;<input type="reset">
