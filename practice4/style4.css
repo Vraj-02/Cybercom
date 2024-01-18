@@ -1,0 +1,37 @@
+div{
+    position: absolute; 
+    margin-left: 10%;
+    width: fit-content;
+}
+table{
+        border-collapse: collapse;
+        border: double 5px;
+        /* border-bottom: solid ; */
+}
+th,
+td,
+tr {
+  text-align: center;
+  border: 1px solid black;
+  padding: 5px 5px;
+}
+table {
+  width: 80%;
+}
+
+#Heading,
+#com {
+  background: #7fab6e;
+  font-size: large;
+}
+
+table th:nth-child(1) {
+  background: rgba(177, 218, 255, 0.781);
+}
+
+table tr td:nth-child(3){
+  background: rgba(234, 165, 211, 0.945);
+}
+table tr td:nth-child(4){
+  background: rgb(215, 207, 102);
+}
