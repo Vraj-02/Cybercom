@@ -1,0 +1,14 @@
+input{
+    font-size: large;
+}
+.wrap{
+    text-align: center;
+}
+img{
+    width: 25%;
+}
+.btn{
+    border-radius: 12px;
+    background-color: blueviolet;
+    color: aliceblue;
+}
