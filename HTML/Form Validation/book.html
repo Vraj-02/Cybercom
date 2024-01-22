@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight booking</title>
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+        <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js">
+          </script>
+        <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+          </script>
+</head>
+<body>
+<script>
+
+function validation(){
+    var mob=document.getElementById("mobno").value;
+    var eml=document.getElementById("eml").value;
+    var Secmob=document.getElementById("secMobno").value;
+    var Seceml=document.getElementById("seceml").value;
+
+    var phone=/^[1-9]{1}[0-9]+$/;
+    var em=/^\w([\.-]?\w+)*@\w+([\.-]?\w)*(\.\w{2,3})+$/;
+    if(phone.test(mob)==false){alert("enter only digits in mobile no.");}
+    if(mob.length!=10){alert("enter 10 digits")};
+    if(em.test(eml)==false){alert("enter valid email");}
+    if(phone.test(Secmob)==false){alert("enter only digits in mobile no.");}
+    if(Secmob.length!=10){alert("enter 10 digits")};
+    if(em.test(Seceml)==false){alert("enter valid email");}
+
+}
+$().ready(function () {
+ 
+ $("#frm").validate({
+     rules: {
+        txtFirstName:{
+            required: true,
+            minlength: 2
+
+        }
+      
+         ,confirmeml: {
+             required: true,
+             email: true,
+             equalTo: "eml"
+
+         },
+     },
+     messages:{
+        confirmeml:{
+            equalTo: " Please enter the same email as above"
+
+        }
+
+        
+     }
+ });
+});
+    </script> 
+    <form name="frm" id="frm">
+        <table style="text-align: center; margin: auto;">
+            <tr>
+                <td><label for="txtFirstName">First Name</label></td>
+                <td><input type="text" name="txtFirstName" id="txtFirstName" required></td>
+            </tr>
+            <tr>
+                <td><label for="txtLastName">Last Name</label></td>
+                <td><input type="text" name="txtLastName" id="txtLastName" required></td>
+            </tr>
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <select class="c1data" name="gender" id="gender" required>
+                        <option value="choose" disabled selected>Choose a gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Othr">Others</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="eml">E-mail</label></td>
+                <td><input type="text" name="eml" id="eml" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirmeml">Confirm E-mail</label></td>
+                <td><input type="text" name="confirmeml" id="confirmeml" required></td>
+            </tr>
+            <tr>
+                <td><label for="Mobno">Mobile number</label></td>
+                <td><input type="text" name="mobno" id="mobno" required></td>
+            </tr>
+            <tr>
+                <td><label for="seceml">Secondary Email</label></td>
+                <td><input type="text" name="seceml" id="seceml" required></td>
+            </tr>
+            <tr>
+                <td><label for="secmobno">Secondary Mobile number</label></td>
+                <td><input type="int" name="secMobno" id="secMobno" required></td>
+            </tr>
+            <tr>
+                <td><label for="txtSource">Source</label></td>
+                <td><input type="text" name="txtSource" id="txtSource" required></td>
+            </tr>
+            <tr>
+                <td><label for="txtDestination">Destination</label></td>
+                <td><input type="text" name="txtDestination" id="txtDestination" required></td>
+            </tr>
+            <tr>
+                <td><label for="dt">Date</label></td>
+                <td><input type="date" name="dt" id="dt" required></td>
+            </tr>           
+            
+        </table>
+        <br><input type="submit" value="Validate" onclick="validation()" style="margin:0 50%;">
+    </form>    
+</body>
+</html>
