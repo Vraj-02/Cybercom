@@ -40,16 +40,22 @@ hr{
     padding-right: 10%;
 }
 .txt{
-    width: 300px;
+    width: 50%;
     height: 30px;
 }
+.txt-name{
+    width: 90%;
+    height: 30px;
+
+}
 .dt{
-    width: 200px;
+    width: 95%;
     height: 30px;
 }
 .input-label{
     color: #636363;
     font-size: small;
+    padding-left: 10px;
 }
 .input-name,
 .input-date{
