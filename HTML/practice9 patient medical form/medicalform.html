@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Form</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+        <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js">
+          </script>
+        <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+          </script>
+</head>
+<body>
+   
+    <form name="frm" id="frm" action="submit.html">
+        <div class="full-form">
+            
+            <div class="general"><h2>General Patient Information</h2></div>
+            <hr>
+          
+            <div class="middle">
+            <div class="gender">
+                <p>Patient gender<span>*</span></p>
+                <select name="patientGender" id="patientGender" class="txt">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <br>
+
+            <div class="name">
+                <p>Patient Name<span>*</span></p>
+                <div class="input-name">
+                <div class="nameFirstName">
+                <input type="text" name="txtFirstname" id="txtFirstname"  class="txt"><br>
+                <span class="input-label">First Name</span>
+                </div>
+                <div class="nameLastName">
+                <input type="text" name="txtLastname" id="txtLastname" class="txt"><br>
+                <span class="input-label">Last Name</span>
+                </div> 
+                </div>              
+            </div>
+            <br>
+
+            <div class="dateofbirth">
+                <p>Patient Date of Birth<span>*</span></p>
+                <div class="input-date">
+
+                <div class="dob-day">
+                <select name="day" id="day" class="dt">
+                    <option value="" disabled selected>day</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select></div>
+                <div class="dob-month">
+                <select name="month" id="month" class="dt">
+                    <option value="" disabled selected>month</option>
+                    <option value="January">January</option>
+                    <option value="February">February</option>
+                    <option value="March">March</option>
+                    <option value="April">April</option>
+                </select></div>
+                <div class="dob-year">
+                <select name="year" id="year" class="dt">
+                    <option value="" disabled selected>year</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                </select></div>
+                </div>              
+            </div>
+            <br>
+
+            <div class="height">
+                <p>Patient Height(cms)<span>*</span></p>
+                <input type="number" name="numHeight" id="numHeight" placeholder="ex.176" class="txt">
+            </div>
+            <br>
+
+            <div class="weight">
+                <p>Patient Weight(cms)<span>*</span></p>
+                <input type="number" name="numWeight" id="numWeight" placeholder="ex.70" class="txt">
+            </div>
+            <br>
+
+            <div class="eml">
+                <p>Patient E-mail<span>*</span></p>
+                <input type="email" name="patEmail" id="patEmail" placeholder="ex.example@exp.com" class="txt">
+            </div>
+            <br>
+
+            <div class="reason">
+                <p>Reason For Seeing a doctor<span>*</span></p>
+                <input type="text" name="txtReason" id="txtReason" class="txt">
+            </div>
+            <br><br>
+
+            <p><h3> Medical History</h3></p>
+            <hr>
+            <div class="drug">
+                <p>Please list any drug allergies </p>
+                <textarea name="txtDrug" id="txtDrug"></textarea>
+            </div>
+            <br>
+
+            <div class="disease">
+                <p>Have you ever had (Please check all that apply)</p>
+                <input type="checkbox" name="Asthma" id="Asthma">Asthama<br>
+                <input type="checkbox" name="Anemia" id="Anemia">Anemia<br>
+                <input type="checkbox" name="Cancer" id="Cancer">Cancer <br>
+                <input type="checkbox" name="Diabities" id="Diabities">Diabities <br>
+                <input type="checkbox" name="Heart disease" id="Heart disease">Heart disease <br>
+                <input type="checkbox" name="High blood pressure" id="High blood pressure">High blood pressure <br>
+            </div>
+            <br>
+
+            <div class="othIll">
+                <p>Other illness</p>
+                <input type="text" name="txtIllness" id="txtIllness" class="txt">
+            </div>
+            <br><br>
+
+            <div class="operation">
+                <p>Please list any Operations and Dates of Each</p>
+                <textarea name="txtOperation" id="txtOperation"></textarea>
+            </div>
+            <br><br>
+
+            <div class="medications">
+                <p>Please list your Current Medications</p>
+                <textarea name="txtMedication" id="txtMedication"></textarea>
+            </div>
+            <br><br><br>
+
+            <p><h3>Healthy And Unhealthy Habits</h3></p>
+            <hr>
+            <div class="divexercise">
+                <p>Exercise</p>
+                <input type="radio" name="exercise" id="rdExnever">never<br>
+                <input type="radio" name="exercise" id="rdEX1to2">1-2 days<br>
+                <input type="radio" name="exercise" id="rdEX3to4">3-4 days<br>
+                <input type="radio" name="exercise" id="rdEX5">5+ days<br>
+            </div>
+            <br>
+
+            <div class="divdiet">
+                <p>Eat Following a diet</p>
+                <input type="radio" name="diet" id="rdDietstrict">Eat Strict Diet<br>
+                <input type="radio" name="diet" id="rdDietloose">Eat loose diet<br>
+                <input type="radio" name="diet" id="rdDietnone">No diet Plan<br>
+            </div>
+            <br>
+
+            <div class="divalcohol">
+                <p>Alcohol Consumption</p>
+                <input type="radio" name="alcohol" id="rdAlcnever">I don't drink<br>
+                <input type="radio" name="alcohol" id="rdAlc1to2">1-2 glasses/day<br>
+                <input type="radio" name="alcohol" id="rdAlc3to4">3-4 glasses/day<br>
+                <input type="radio" name="alcohol" id="rdAlc5">5+ glasses/day<br>
+            </div>
+            <br>
+
+            <div class="divcaffeine">
+                <p>Caffeine Consumption</p>
+                <input type="radio" name="caffeine" id="rdCafnever">I don't drink<br>
+                <input type="radio" name="caffeine" id="rdCaf1to2">1-2 cups/day<br>
+                <input type="radio" name="caffeine" id="rdCaf3to4">3-4 cups/day<br>
+                <input type="radio" name="caffeine" id="rdCaf5">5+ cups/day<br>
+            </div>
+            <br>
+
+            <div class="divsmoke">
+                <p>Do you smoke?</p>
+                <input type="radio" name="smoke" id="rdSmknever">I don't smoke<br>
+                <input type="radio" name="smoke" id="rdSmk0to1">0-1 packs/day<br>
+                <input type="radio" name="smoke" id="rdSmk1to2">1-2 packs/day<br>
+                <input type="radio" name="smoke" id="rdSmk3">2+ packs/day<br>
+            </div>
+            <br>
+
+            <div class="divhistory">
+                <p>Include other comments regarding your Medical History</p>
+                <textarea name="txtMedicalHistory" id="txtMedicalHistory"></textarea>
+            </div>
+            <br>
+
+                <button type="submit">Submit</button>
+        </div>
+        </div>
+    </form> 
+    <script src="script.js"></script>
+</body>
+</html>
