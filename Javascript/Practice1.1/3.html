@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Click Text Change</title>
+</head>
+<body>
+
+  <p id="paragraph1">Original Text - Paragraph 1</p>
+  <p id="paragraph2">Original Text - Paragraph 2</p>
+  <p id="paragraph3">Original Text - Paragraph 3</p>
+
+  <button onclick="changeText('paragraph1')">Change Text for Paragraph 1</button>
+  <button onclick="changeText('paragraph2')">Change Text for Paragraph 2</button>
+  <button onclick="changeText('paragraph3')">Change Text for Paragraph 3</button>
+
+  <script>
+    function changeText(paragraphId) {     
+      var paragraph = document.getElementById(paragraphId);
+        paragraph.innerText = 'New Text for ' + paragraphId;
+    }
+  </script>
+
+</body>
+</html>

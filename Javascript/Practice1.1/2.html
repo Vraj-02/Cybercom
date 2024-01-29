@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List</title>
+</head>
+<body>
+
+  <h2>List of Items</h2>
+  
+  <ul id="itemList">
+    <!-- Existing list items go here -->
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <div>
+    <label for="newItem">New Item:</label>
+    <input type="text" id="newItem" placeholder="Enter item">
+    <button  onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Last Item</button>
+  </div>
+
+  <script>
+    function addItem() {
+      var newItemValue = document.getElementById('newItem').value;
+      
+      var newItem = document.createElement('li');
+
+      newItem.textContent = newItemValue;
+
+      document.getElementById('itemList').appendChild(newItem);
+
+      document.getElementById('newItem').value = '';
+    }
+
+    function removeItem() {
+      var itemList = document.getElementById('itemList');
+      var lastItem = itemList.lastElementChild;
+      if (lastItem) {
+        itemList.removeChild(lastItem);
+      }
+    }
+  </script>
+
+</body>
+</html>

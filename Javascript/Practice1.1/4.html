@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <style>
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Form Validation</h2>
+
+  <form id="myForm" >
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <span id="nameError" class="error"></span><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email">
+    <span id="emailError" class="error"></span><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password">
+    <span id="passwordError" class="error"></span><br>
+
+    <input type="button" value="Submit" onclick="validateForm()">
+  </form>
+
+  <script>
+    function validateForm() {
+
+      $(".error").text("");
+
+      var name = $("#name").val();
+      var email = $("#email").val();
+      var password = $("#password").val();
+
+      if (name.trim() === "") {
+        $("#nameError").text("Name is required");
+        return false;
+      }
+
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        $("#emailError").text("Invalid email format");
+        return false;
+      }
+
+      if (password.length < 8) {
+        $("#passwordError").text("Password must be at least 8 characters");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
+</body>
+</html>

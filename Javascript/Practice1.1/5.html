@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Change on click</title>
+</head>
+<body>
+
+  <h2>Click on the button to change image:</h2>
+
+  <button onclick="changeImage('img1')">Change Image 1</button>
+  <button onclick="changeImage('img2')">Change Image 2</button>
+  <button onclick="changeImage('img3')">Change Image 3</button>
+  <br>
+  <img id="img1" src="img1.jpg" alt="Image 1" width="300">
+  <img id="img2" src="img1.jpg" alt="Image 2" width="300">
+  <img id="img3" src="img1.jpg" alt="Image 3" width="300">
+
+  <script>
+    function changeImage(imageId) {
+      const imageSources = {
+        'img1': 'img2.jpg',
+        'img2': 'img2.jpg',
+        'img3': 'img2.jpg',
+      };
+      let image = document.getElementById(imageId);
+      image.src = imageSources[imageId];
+    }
+  </script>
+
+</body>
+</html>
