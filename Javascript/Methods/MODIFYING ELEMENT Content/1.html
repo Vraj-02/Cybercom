@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET element by ID</title>
+</head>
+<body>
+    <form>
+        enter text<br>
+        <input type="text" id="txt"><br>
+        <input type="button" value="write txt" onclick="clicked()">
+        <p id="wrtTxt"></p>
+        <script>
+            function clicked(){
+                var a=document.getElementById("txt").value;
+                let w=document.getElementById("wrtTxt");
+                // can use html tags
+                w.innerHTML="<strong>" + a + "</strong>";             
+            }
+        </script>
+    </form>
+</body>
+</html>

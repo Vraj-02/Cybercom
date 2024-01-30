@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET element by ID</title>
+</head>
+<body>
+    <form>
+        enter text<br>
+        <input type="text"  class="txt"><br>
+        <input type="text"  class="txt"><br>
+        <input type="button" value="write txt" onclick="clicked()">
+        <p id="wrtTxt"></p>
+        <script>
+            function clicked(){
+                var a=document.getElementsByTagName("input");
+                var inputStrings="";
+                for(let i=0;i<a.length;i++){
+                    inputStrings+=a[i].value + "<br>";
+                };
+                let w=document.getElementById("wrtTxt");
+                w.innerHTML=inputStrings;           
+            }
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="exDiv" class="oldDiv" >This is div</div>
+    <script>
+        var exElement=document.getElementById("exDiv");
+        console.log(exElement.className);
+
+        exElement.className='newDiv';
+        console.log(exElement.className);
+    </script>
+</body>
+</html>
