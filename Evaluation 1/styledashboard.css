@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+table{
+    margin-top: 20vh;
+    text-align: center;
+    width: 90%;
+    border: solid;
+    column-gap: 2%;
+}
+input{
+    width: 20%;
+}
+.btn{
+    float: left;
+}
+a{
+    text-decoration: none;
+}
+th{
+    background-color: rgb(50, 50, 50);
+    color: white;
+}
+.full{
+    display: flex;
+    height: 100%;
+}
+.navigation{
+    width: 15%;
+    height: 100vh;
+    background-color: antiquewhite;
+    line-height: 4;
+    text-align: center;
+}
+.userside{
+    width: 85%;
+    height: 100%;
+}
+.rightside{
+    width: 85%;
+    height: 100%;
+    display: flex;
+    margin-top: 0;
+}
+.userUnder18,
+.userOver18,
+.userOver50{
+    flex: 1;
+    border: solid;
+    margin: 5px;
+    height: 70px;
+}

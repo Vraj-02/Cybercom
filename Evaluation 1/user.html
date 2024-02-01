@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" href="styledashboard.css">
+</head>
+<body>
+    <div class="full">
+
+    <div class="navigation">
+        Hello,<span id="showUserName"></span><br>
+        <a href="Dashboard.html">Dashboard</a><br>
+        <a href="user.html">Users</a><br>
+        <a href="LoginSession.html">Login <br>Session</a><br>
+        <a href="#">Logout</a><br>
+    </div>
+    <div class="userside">
+    <div class="top">
+        <form id="userForm">
+        <input type="text" name="txtUserName" id="txtUserName" placeholder="Name">
+        <input type="email" name="userEmail" id="userEmail" placeholder="Email">
+        <input type="password" name="userPassword" id="userPassword" placeholder="Password">
+        <input type="date" name="userDob" id="userDob" placeholder="Birthdate"><br><br>
+        <input type="button" value="Add User" onclick="addData()">
+    </form>
+    </div>
+    <div class="bottom">
+        <table id="userList">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Birthdate</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody id="tableBody">
+            <tr>
+                <td>Vraj</td>
+                <td>abc@gmail.com</td>
+                <td>abcd1234</td>
+                <td>16-04-02</td>
+                <td>21</td>
+                <td><a href="">Edit</a><a href="#">Delete</a></td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+</div>
+</div>
+<script src="userjs.js"></script>
+</body>
+</html>
