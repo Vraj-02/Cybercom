@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    button{
+      font-size: large;
+    }
+    .btn{
+      margin-left: 35%;
+    }
+    a{
+      text-decoration: none;
+    }
+
+    .product {
+      max-width: 400px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    .quantity {
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .quantity input {
+      width: 50px;
+      text-align: center;
+      margin: 0 10px;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="full">
+
+  <div class="product" id="product1">
+    <h2>Mobile</h2>
+    <div class="quantity">
+      price: #10<br>
+      <br><label for="quantity1">Quantity:</label><br>
+      <button  onclick="decreaseQuantity('quantityProduct1')">-</button>
+      <input type="text" class="quantity-input" id="quantityProduct1" value="0" min="0" price="10" name="Mobile" >     
+      <button onclick="increaseQuantity('quantityProduct1')">+</button>    
+    </div>
+  </div>
+  
+  <div class="product" id="product2">
+    <h2>Laptop</h2>
+    <div class="quantity">
+      price: #20 <br> <br>
+      <label for="quantity2">Quantity:</label><br>
+      <button  onclick="decreaseQuantity('quantityProduct2')">-</button>
+      <input type="text" class="quantity-input" id="quantityProduct2" value="0" min="0" price="20" name="Laptop">     
+      <button onclick="increaseQuantity('quantityProduct2')">+</button>      
+    </div>
+  </div>
+  
+  <div class="product" id="product3">
+      <h2>TV</h2>
+      <div class="quantity">
+        price: #30 <br> <br>
+        <label for="quantity3">Quantity:</label><br>
+        <button  onclick="decreaseQuantity('quantityProduct3')">-</button>
+        <input type="text" class="quantity-input" id="quantityProduct3" value="0" min="0" price="30" name="TV">        
+        <button onclick="increaseQuantity('quantityProduct3')">+</button>
+      </div>
+    </div>
+    <br>
+  
+  <button class="btn" onclick="addToCart()">Add to Cart</button>
+  <a href="cart.html"><button>Go to Cart</button></a>
+
+  </div>
+  <script>
+   var plus=document.createElement('button' , onclick(""))
+
+    
+  </script>
+  <script src="script.js"></script>
+  
+</body>
+</html>

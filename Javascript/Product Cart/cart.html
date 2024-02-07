@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart</title>
+  <style>
+        .cart-details {
+      margin-top: 20px;
+      margin-left: 30%;
+    }
+  </style>
+</head>
+<body>
+  <div class="cart-details">
+    <h3>Shopping Cart</h3>
+    <ul id="cart-list"></ul>
+    <p>GST: 10%</p>
+    <p>Total: #<span id="total">0.00</span></p>
+  </div>
+  <script>
+    function updateCartDetails() {
+    const cartListElement = document.getElementById('cart-list');
+    const totalAmountElement = document.getElementById('total');
+
+    const cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+
+    cartListElement.innerHTML = '';
+
+    let totalAmount = 0;
+
+    for (const productId in cartData) {
+      if (cartData.hasOwnProperty(productId)) {
+        const product = cartData[productId];
+        if(`${product.quantity}`>0){
+        const listItem = document.createElement('li');
+        listItem.textContent = ` ${product.productName} Quantity - ${product.quantity}, Total - ${product.totalAmount.toFixed(2)}`;
+        cartListElement.appendChild(listItem);
+        }
+
+        totalAmount += product.totalAmount;
+      }
+    }
+     var totalGst=(totalAmount*10)/100;
+     var grandTotal=parseFloat(totalAmount+totalGst);
+
+    totalAmountElement.textContent = grandTotal.toFixed(2);
+  }
+
+  window.onload = function () {
+    updateCartDetails();
+  };
+  </script>
+  
+</body>
+</html>
