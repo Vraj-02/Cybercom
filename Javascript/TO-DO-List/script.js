@@ -9,6 +9,7 @@ function addTask() {
         alert("Please fill out all required fields.");
         return;
       }
+    else{
     var task = {
       id: Date.now(),
       name: taskName,
@@ -22,6 +23,7 @@ function addTask() {
     localStorage.setItem('tasks', JSON.stringify(tasks));
     document.getElementById('taskForm').reset();   
     window.location.replace('display.html')
+}
 }
 
 function displayTasks() {
