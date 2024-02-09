@@ -10,13 +10,13 @@
 
   <script>
  
-    var newParagraph = document.createElement('p');
+    let  newParagraph = document.createElement('p');
 
     newParagraph.textContent = 'This is a new paragraph.';
 
     document.body.appendChild(newParagraph);
 
-    var newestParagraph = document.createElement('p');
+    let  newestParagraph = document.createElement('p');
     newestParagraph.textContent='This is the replaced paragraph'
 
     document.body.replaceChild(newestParagraph,newParagraph);

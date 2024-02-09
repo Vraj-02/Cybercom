@@ -36,16 +36,16 @@
 
       $(".error").text("");
 
-      var name = $("#name").val();
-      var email = $("#email").val();
-      var password = $("#password").val();
+      let  name = $("#name").val();
+      let  email = $("#email").val();
+      let  password = $("#password").val();
 
       if (name.trim() === "") {
         $("#nameError").text("Name is required");
         return false;
       }
 
-      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      let  emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailRegex.test(email)) {
         $("#emailError").text("Invalid email format");
         return false;

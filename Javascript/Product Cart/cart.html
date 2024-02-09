@@ -41,8 +41,8 @@
         totalAmount += product.totalAmount;
       }
     }
-     var totalGst=(totalAmount*10)/100;
-     var grandTotal=parseFloat(totalAmount+totalGst);
+     let  totalGst=(totalAmount*10)/100;
+     let  grandTotal=parseFloat(totalAmount+totalGst);
 
     totalAmountElement.textContent = grandTotal.toFixed(2);
   }

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add Task</title>
+  <title>Edit Task</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <script src=
     "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
@@ -31,19 +31,17 @@
     }
 </style>
 <body>
-  <div class="container">
-    <span class="addTask">Add Task 
-    <a href="display.html">Show Tasks</a>
-    </span>
-    <form id="taskForm" name="taskForm" action="display.html" onsubmit="addTask()">
+  <script src="script/script.js"></script>
+  <div class="container mt-4">
+    <h2>Edit Task</h2>
+    <form id="taskForm">
       <div class="form-group">
         <label for="taskName">Task Name:</label>
-        <input type="text" class="form-control" id="taskName" required>
-        <span id="taskNameError"></span>
+        <input type="text" class="form-control" id="taskNameEdit" required>
       </div>
       <div class="form-group">
         <label for="category">Category:</label>
-        <select class="form-control" id="category" required>
+        <select class="form-control" id="categoryEdit" required>
             <option value="Personal">Personal</option>
             <option value="Household">Household</option>
             <option value="Office">Office Work</option>
@@ -51,7 +49,7 @@
       </div>
       <div class="form-group">
         <label for="priority">Priority:</label>
-        <select class="form-control" id="priority">
+        <select class="form-control" id="priorityEdit">
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
@@ -59,16 +57,18 @@
       </div>
       <div class="form-group">
         <label for="dueDate">Due Date:</label>
-        <input type="date" class="form-control" id="dueDate" required>
+        <input type="date" class="form-control" id="dueDateEdit" required>
       </div>
       <div class="form-group">
         <label for="description">Description:</label>
-        <textarea class="form-control" id="description" required></textarea>
+        <textarea class="form-control" id="descriptionEdit" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary" >Add Task</button>&nbsp;
-      
+      <button type="submit" class="btn btn-success" onclick="updateTask()">Save Changes</button>
+      <a href="display.html">Show Task</a>
     </form>
   </div>
-  <script src="script/script.js"></script>
+
+  
 </body>
 </html>
+

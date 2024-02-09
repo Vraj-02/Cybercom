@@ -25,9 +25,9 @@
 
   <script>
     function addItem() {
-      var newItemValue = document.getElementById('newItem').value;
+      let  newItemValue = document.getElementById('newItem').value;
       
-      var newItem = document.createElement('li');
+      let  newItem = document.createElement('li');
 
       newItem.textContent = newItemValue;
 
@@ -37,8 +37,8 @@
     }
 
     function removeItem() {
-      var itemList = document.getElementById('itemList');
-      var lastItem = itemList.lastElementChild;
+      let  itemList = document.getElementById('itemList');
+      let  lastItem = itemList.lastElementChild;
       if (lastItem) {
         itemList.removeChild(lastItem);
       }

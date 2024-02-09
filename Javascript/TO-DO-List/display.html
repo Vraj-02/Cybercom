@@ -5,24 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Display Tasks</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src=
+    "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+          </script>
+        <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js">
+          </script>
+        <script src=
+    "https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js">
+          </script>
   <style>
+    body{
+      background-image:url("images/img3.jpg") ;
+    }
+    h1{
+      color: rgb(31, 51, 68);
+      margin-top: 10%;
+      margin-left: 40%;
+      width: fit-content;
+      font-size: 3rem;
+    }
+    .checkbox{
+      /* size: 4rem; */
+      height: 2rem;
+      width: 2rem;
+    }
+    .container{
+      width: 60%;
+    }
+    
     .list-group-item{
-      border: 2px solid black;
-      /* margin: 5px; */
+      /* border: 2px solid black; */
+      box-shadow: 2px 2px 2px rgb(127, 126, 126);
+      margin: 5px;
+      background-color: rgb(243, 243, 243);
     }
     strong{
-      font-size: 2rem;
+      font-size: 1.2rem;
+    }
+    .completedTask{
+      text-decoration: line-through;
+      text-decoration-style: double;
+      text-decoration-color: green;
+    }
+    .red{
+      color: red;
+    }
+    .orange{
+      color: rgb(255, 132, 0);
+    }
+    .innerButton{
+      float: right;
+      /* margin: 3px; */
+      margin-right: 5%;
+      margin-top: 2%;
     }
   </style>
 </head>
 <body>
-  <div class="container mt-4">
-    <h2>Task List</h2><a href="index.html"><button class="btn btn-primary">add task</button></a>
+  <div class="container">
+    <h1>Task List</h1>
+    <a href="index.html"><button class="btn btn-primary">Add Task</button></a>
+    <!-- <br>
+    <form id="frm"></form>
+    <div class="form-group ">
+      <label for="filter">Filter:</label>
+        <select class="form-control" id="filter" required>
+            <option value="all">All</option>
+            <option value="completed">Completed</option>
+            <option value="pending">Pending</option>
+        </select>
+    </div>
+    <div class="form-group ">
+      <label for="sort">Sort:</label>
+        <select class="form-control" id="sort" required>
+            <option value="0">Select</option>
+            <option value="ascending">Ascending</option>
+            <option value="descending">Descending</option>
+        </select>
+    </div>  
+</form> -->
+    <br>
     <ul id="taskList" class="list-group">
 
     </ul>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script/script.js"></script>
 </body>
 </html>
