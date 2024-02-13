@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Patient's Dashboard - Appointment Booking App</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h2 class="display-4">Welcome, <span id="patientName"></span></h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Upcoming Appointments</h3>
+                        <ul class="list-group" id="appointments-list">
+                            <!-- Display -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Book an Appointment</h3>
+                        <form id="appointment-form">
+                            <div class="form-group">
+                                <label for="doctor-select">Select Doctor:</label>
+                                <select class="form-control" id="doctor-select" name="doctor-select" required>
+                                    <!-- Display available doctors here -->
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="appointment-date">Select Date:</label>
+                                <input type="date" class="form-control" id="appointment-date" name="appointment-date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="time-select">Select Time</label>
+                                <select id="time-select" class="form-control">
+                                    <option value="" disabled selected>Select Time</option>
+                                    <option value="first">10:00 to 11:00</option>
+                                    <option value="second">11:00 to 12:00</option>
+                                    <option value="third"> 13:00 to 15:00</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Book Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/loginRegistrationJS.js"></script>
+</body>
+</html>

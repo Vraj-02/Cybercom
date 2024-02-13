@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Doctor's Dashboard - Appointment Booking App</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <h2 class="display-4">Welcome, Dr. <span id="doctorName"></span></h2>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Scheduled Appointments</h3>
+                        <ul class="list-group" id="appointments-list">
+                            <!-- Display -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Availability Management</h3>
+                        <form id="availability-form">
+                            <div class="form-group">
+                                <label for="availability-date">Date:</label>
+                                <input type="date" class="form-control" id="availability-date" name="availability-date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="start-time">Start Time:</label>
+                                <input type="time" class="form-control" id="start-time" name="start-time" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="end-time">End Time:</label>
+                                <input type="time" class="form-control" id="end-time" name="end-time" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Set Availability</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="javascript/loginRegistrationJS.js"></script>
+</body>
+</html>
