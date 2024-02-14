@@ -10,12 +10,15 @@
     <div class="container mt-5">
         <div class="jumbotron">
             <h2 class="display-4">Welcome, Dr. <span id="doctorName"></span></h2>
+            <a href="login.html"><button onclick="logoutFunction()">Logout</button></a>
+            
         </div>
 
         <div class="row">
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-body">
+                        <span id="doctorName"></span>
                         <h3 class="card-title">Scheduled Appointments</h3>
                         <ul class="list-group" id="appointments-list">
                             <!-- Display -->
@@ -51,7 +54,25 @@
             </div>
         </div>
     </div>
+    <script> 
+        if (!sessionStorage.getItem("Authentication")) {
+            window.location.href = "login.html";
+        }
+        let user = sessionStorage.getItem('currentUser') || [];
+        console.log(user);
+
+        let name = document.getElementById("doctorName");
+        name.innerHTML=`${user}`;
+        
+        function logoutFunction(){
+            sessionStorage.removeItem("Authentication");
+            window.location.href = "login.html";
+        }
+
+    </script>
+    <script src="javascript/doctorJs.js"></script>
 
     <script src="javascript/loginRegistrationJS.js"></script>
+    
 </body>
 </html>

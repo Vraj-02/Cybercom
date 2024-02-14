@@ -62,16 +62,24 @@ const LocalStorageModule = (function () {
         const user = AuthModule.loginUser(username, password);
   
         if (user) {
-          alert('Login successful!');
+          // alert('Login successful!');
           if(user.role === "doctor"){
-            // navigateTo('doctorDashboard.html');
-            DashboardModule.loadDashboardDoctor(user);
+            sessionStorage.setItem('Authentication',true);
+            let users = JSON.parse(localStorage.getItem('currentUser')) || [];
+            sessionStorage.setItem("currentUser",user.username.toString());
+            navigateTo('doctorDashboard.html');
+            // DashboardModule.loadDashboardDoctor(user);
           }
-          else{         
-            DashboardModule.loadDashboardPatient(user);
+          else{ 
+            sessionStorage.setItem('Authentication',true);
+            let users = JSON.parse(localStorage.getItem('currentUser')) || [];
+            sessionStorage.setItem("currentUser",user.username.toString());
+            navigateTo('patientDashboard.html');
           }
         } else {
-          alert('Invalid username or password.');
+          // alert('Invalid username or password.');
+          let loginError = document.getElementById('loginError');
+          loginError.textContent="Invalid Username Or Password";
         }
       });
     }
@@ -88,45 +96,45 @@ const LocalStorageModule = (function () {
     }
   });
 
-  const DashboardModule = (function () {
-        function loadDashboardDoctor(user) {
-            console.log(user);
-            navigateTo('doctorDashboard.html');
-            // alert("done");
-            console.log("hello");
-            alert("done");
-            let name=document.getElementById('doctorName');
-            name.innerHTML='hello';
-            // console.log("name",name);
+  // const DashboardModule = (function () {
+  //       function loadDashboardDoctor(user) {
+  //           console.log(user);
+            
+  //           let users = JSON.parse(localStorage.getItem('currentUser')) || [];
+  //            sessionStorage.setItem("currentUser",user.username.toString())
+  //           navigateTo('doctorDashboard.html');
+  //           // console.log("hello");
+  //           // alert("done");
+  //           // let name=document.getElementById('doctorName');
+  //           // name.innerHTML='hello';
+  //           // // console.log("name",name);
 
-            const doctors= LocalStorageModule.getFromLocalStorage(`doctors`) || [];
+  //           // const doctors= LocalStorageModule.getFromLocalStorage(`doctors`) || [];
 
-            const avilabilityForm= document.getElementById("availability-form");
-            availabilityForm.addEventListener('submit',function(e){
-                e.preventDefault();
-                const docName = `${user.username}`;
-                const date = avilabilityForm.querySelector('#availability-date').value;
-                const startTime = avilabilityForm.querySelector('#start-time').value;
-                const endtime = avilabilityForm.querySelector('#end-time').value;
+  //           // const avilabilityForm= document.getElementById("availability-form");
+  //           // availabilityForm.addEventListener('submit',function(e){
+  //           //     e.preventDefault();
+  //           //     const docName = `${user.username}`;
+  //           //     const date = avilabilityForm.querySelector('#availability-date').value;
+  //           //     const startTime = avilabilityForm.querySelector('#start-time').value;
+  //           //     const endtime = avilabilityForm.querySelector('#end-time').value;
 
-                const doctor = { docName, date, startTime, endTime };
-                doctors.push(doctor);
-                LocalStorageModule.saveToLocalStorage('doctors',doctors);
+  //           //     const doctor = { docName, date, startTime, endTime };
+  //           //     doctors.push(doctor);
+  //           //     LocalStorageModule.saveToLocalStorage('doctors',doctors);
+  //           // })
 
+  //       }
+  //       function loadDashboardPatient(user){
+  //           let users = JSON.parse(localStorage.getItem('currentUser')) || [];
+  //           sessionStorage.setItem("currentUser",user.username.toString())
+  //           navigateTo('patientDashboard.html');
 
-            })
-
-        }
-        function loadDashboardPatient(user){
-            navigateTo('patientDashboard.html');
-            const name=document.getElementById("patientName");
-            name.innerHTML(`${user.username}`)
-
-        }
-      
-        return {
-          loadDashboardDoctor,
-          loadDashboardPatient
-        };
-      })();
+  //       }
+    
+  //       return {
+  //         loadDashboardDoctor,
+  //         loadDashboardPatient
+  //       };
+  //     })();
   

@@ -7,6 +7,9 @@ body {
     height: 100vh;
     background-image: url("../Images/img2.jpg");
 }
+#loginError{
+    color: red;
+}
 
 #app {
     display: flex;
