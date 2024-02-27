@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Dog Images</title>
+  <style>
+    * {
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      /* margin: 10px */
+    }
+
+    #savedDogImages {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card img {
+      width: 200px;
+    }
+
+</style>
+</head>
+<body>
+  <h1>Saved Dog Images</h1>
+  <a href="index.html">Generate Images</a>
+  <div id="savedDogImages" class="grid-container"></div>
+  
+  <script>
+    
+    const savedImages = JSON.parse(localStorage.getItem('savedDogImages')) || [];
+
+    const savedDogImages = document.getElementById('savedDogImages');
+    savedImages.forEach(image => {
+      const createDiv = document.createElement("div");
+      createDiv.classList.add("card");
+      createDiv.innerHTML = `
+        <div>
+          <img src="${image.url}" alt="Saved Dog ${image.id}"><br>
+          <button onclick="deleteImage('${image.id}')">Delete Image</button>
+        </div>`;
+        savedDogImages.appendChild(createDiv);
+        
+    });
+
+    function deleteImage(id) {
+      const updatedImages = savedImages.filter(image => image.id !== id);
+      localStorage.setItem('savedDogImages', JSON.stringify(updatedImages));
+      location.reload();
+    }
+
+  </script>
+</body>
+</html>
