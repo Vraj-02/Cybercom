@@ -4,10 +4,7 @@ function addProduct(){
         // price: parseFloat($("#price").val()),
         // description: $("#description").val(),
         // categoryId: parseInt($("#categoryId").val()),
-        // images: $("#images")
-        //   .val()
-        //   .split(",")
-        //   .map((url) => url.trim()),
+        // images: $("#images").val()
         
             title: "latest product again-",
             price: 1000,
