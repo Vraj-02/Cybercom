@@ -38,13 +38,15 @@
   img{
     width: 100px;
   }
- #nav{
-    background-color: bisque;
-    color: black;
-    height: 5rem;
- } 
-
+  #nav{
+   
+    width: 60%;
+    margin-left: 20%;
+  }
 #btnAdd{
     float: right;
     margin: 2rem 1rem 0rem 0rem;
+}
+.active {
+  box-shadow: 3px 3px 3px black;
 }

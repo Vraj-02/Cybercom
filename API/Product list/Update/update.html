@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <a href="../index.html" class="btn btn-secondary mb-3">Back</a>
+        <form id="updateForm">
+            <div class="formContainer">
+                <h1 class="mb-4">Update Product</h1>
+                <div class="fields">
+
+                    <div class="form-group">
+                        <label for="txtproductTitle">Product Title</label>
+                        <input type="text" class="form-control" id="txtproductTitle" name="txtproductTitle" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="numProductPrice">Price</label>
+                        <input type="number" class="form-control" id="numProductPrice" name="numProductPrice" required>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtareaDescription">Description</label>
+                        <textarea class="form-control" id="txtareaDescription" name="txtareaDescription" rows="4"
+                            placeholder="Type here"></textarea>
+                        <div class="error"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="img">Image Link</label>
+                        <input type="text" class="form-control" id="imgLink" placeholder="Enter image link here">
+                        <div class="error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="updateBtnInForm">Update</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+    <script src="validation.js"></script>
+    <script src="scriptUpdate.js"></script>
+</body>
+
+</html>

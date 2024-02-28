@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="nav">Product List <br>
-    <span id="btnAdd"><a href="Add/add.html"><button>Add Products</button></a> </span>
+    <div id="nav"><h1>Product List </h1>
+    <span id="btnAdd"><a href="Add/add.html"><button class="btn btn-primary">Add Products</button></a> </span>
     <input class="form-control" type="search"
     id="search-input"
-    style="width:40%;margin:1%;" placeholder="Search" aria-label="Search"><br>
+     placeholder="Search" aria-label="Search"><br>
     <label for="sort-select">Sort By:</label>
     <select class="form-control" id="sort-select">
       <option>Select value</option>
         <option value="price-low-to-high">Price: Low to High</option>
         <option value="price-high-to-low">Price: High to Low</option>
-    </select>
+    </select><br>
+    <div>
+        <label for="category-filter">Filter by Category:</label>
+        <select id="category-filter" class="form-control">
+            <option value="all">All Categories</option>
+
+        </select>
     </div>
+    <br>
+    <div id="pagination"></div>
+    </div><br>
+    
     <div id="product-container" class="grid-container"></div>
+   
+    
    <script src="script.js"></script>
 </body>
 </html>
