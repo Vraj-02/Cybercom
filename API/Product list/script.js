@@ -1,6 +1,6 @@
   let data = [];
   let currentPage = 1;
-  const itemsPerPage = 12;
+  const itemsPerPage = 9;
   filteredProducts=[];
 
 fetch("https://api.escuelajs.co/api/v1/categories")
@@ -110,6 +110,7 @@ fetch("https://api.escuelajs.co/api/v1/categories")
                         .then((products) => {
                             data = products;
                             displayProducts(data);
+                            // displayProducts(filteredProducts);
                             renderPagination();
                         })
                         .catch((err) => {

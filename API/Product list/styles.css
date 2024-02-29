@@ -1,11 +1,5 @@
-.current-page {
-    background-color: #007bff;
-    color: #fff;
-  }
-.pageButton{
-    height: 2rem;
-    width: 2rem;
-    margin: 1rem;
+body{
+  padding: 1rem;
 }
 .grid-container {
     text-align: center; /
@@ -44,9 +38,30 @@
     margin-left: 20%;
   }
 #btnAdd{
-    float: right;
+  display: inline;
+    float: inline-end;
     margin: 2rem 1rem 0rem 0rem;
 }
-.active {
-  box-shadow: 3px 3px 3px black;
+#heading{
+  display: inline;
+}
+.active {  
+  box-shadow: 4px 4px 4px rgb(0, 0, 0);
+}
+.sort-filter{
+  display: flex;
+}
+.sort-container,
+.filter-container{
+  flex: 1;
+  margin: 1rem;
+}
+#footer{
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+}
+#pagination{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
