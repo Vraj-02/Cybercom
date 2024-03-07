@@ -36,15 +36,11 @@ SELECT player_id, MIN(device_id) AS device_id FROM activity GROUP BY player_id;
 SELECT 
     A.player_id,
     A.event_date,
-    (SELECT 
-            SUM(B.games_played)
-        FROM
-            activity B
-        WHERE
-            A.player_id = B.player_id
-                AND B.event_date <= A.event_date) AS games_played_so_far
-FROM
-    activity A;
+    (SELECT SUM(B.games_played)
+        FROM activity B
+        WHERE A.player_id = B.player_id AND B.event_date <= A.event_date) 
+		AS games_played_so_far
+FROM activity A;
 
 
 
