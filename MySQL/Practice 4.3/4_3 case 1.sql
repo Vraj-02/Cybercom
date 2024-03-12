@@ -62,7 +62,6 @@ GROUP BY user_id
 ORDER BY total_amount DESC;
 
 -- 4.	Retrieve the email address of the user who has placed the most orders.
-
 SELECT u.id, u.name, u.email 
 FROM users u
 JOIN orders o ON u.id = o.user_id
@@ -103,7 +102,7 @@ FROM orders
 WHERE WEEK(created_at) = WEEK(CURRENT_DATE)
 GROUP BY order_date;
 
--- 10
+-- 10 
 SELECT DISTINCT u.id, u.email
 FROM users u
 JOIN orders o ON u.id = o.user_id
