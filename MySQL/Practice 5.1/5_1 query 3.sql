@@ -68,9 +68,3 @@ JOIN order_details_task3 od
 ON od.order_id = o.order_id
 GROUP BY c.customer_id;
 
-SELECT 
-	CASE 
-		WHEN '2024-03-01' >= DATE_SUB(CURDATE(), INTERVAL 30 DAY) 
-        THEN 100 
-        ELSE 0 
-	END;
