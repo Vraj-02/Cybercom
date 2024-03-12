@@ -29,9 +29,6 @@ INSERT INTO users  VALUES
     (5, 'Prachi', 'prachi@test.com', '8901234567', '2024-03-11 17:00:00', '2024-03-11 17:00:00'),
     (6, 'Helly',  'helly@test.com', '7890123456','2024-03-11 16:30:00', '2024-03-11 16:30:00');
     
-
-
--- Insert sample data into orders table
 INSERT INTO orders VALUES 
     (1,1, 50.00, '2024-03-11 14:00:00', '2024-03-11 14:00:00'),
     (2,1, 75.00, '2024-03-11 14:30:00', '2024-03-11 14:30:00'),
@@ -56,9 +53,10 @@ JOIN orders o ON u.id = o.user_id
 GROUP BY u.id;
 
 -- 3.	Retrieve the total amount of orders placed by each user, sorted in descending order of total amount.
-SELECT user_id, SUM(amount) AS total_amount
-FROM orders
-GROUP BY user_id
+SELECT u.id, u.name, u.email, IFNULL(SUM(o.amount), 0) AS total_amount 
+FROM users u 
+LEFT JOIN orders o ON u.id = o.user_id
+GROUP BY u.id
 ORDER BY total_amount DESC;
 
 -- 4.	Retrieve the email address of the user who has placed the most orders.
@@ -86,7 +84,7 @@ HAVING COUNT(o.id) = (
  SELECT COUNT(u.id)
  FROM users u
  LEFT JOIN orders o ON u.id=o.user_id
- WHERE o.id IS NULL
+ WHERE o.id IS NULL;
 ;
 -- 7.	Update the user with ID 1 to change their email address to "jane.doe@example.com".
 UPDATE users SET email='jane.doe@example.com' WHERE id=1;
@@ -102,7 +100,8 @@ FROM orders
 WHERE WEEK(created_at) = WEEK(CURRENT_DATE)
 GROUP BY order_date;
 
--- 10 
+-- 10.	Retrieve the IDs and email addresses of users who have placed an order in the current year 
+--      and whose email address is in the format "example.com".
 SELECT DISTINCT u.id, u.email
 FROM users u
 JOIN orders o ON u.id = o.user_id

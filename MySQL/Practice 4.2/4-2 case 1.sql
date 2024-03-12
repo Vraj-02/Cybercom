@@ -76,12 +76,23 @@ ORDER BY DepartmentName;
 
 -- 4.	Write a query to return the top 10% of highest paid employees, ordered by salary.
 -- SET @threshold = CEIL(0.10 * (SELECT COUNT(*) FROM Employees));
+-- SELECT Name, Salary
+-- FROM Employees
+-- ORDER BY Salary DESC
+-- LIMIT @threshold
+-- LIMIT (SELECT CEIL(0.10 * COUNT(*)) FROM Employees)
+-- ;
+
 SELECT Name, Salary
-FROM Employees
-ORDER BY Salary DESC
--- LIMIT @threshold;
--- LIMIT (SELECT CEIL(0.10 * COUNT(*)) FROM Employees);
-;
+FROM (
+    SELECT Name, Salary, 
+           ROW_NUMBER() OVER (ORDER BY Salary DESC) AS row_num,
+           COUNT(*) OVER () AS total_rows
+    FROM Employees
+) AS ranked_employees
+WHERE row_num <= CEIL(0.1 * total_rows)
+ORDER BY Salary DESC;
+
 
 -- 5.	Write a query to return the salary of each employee for their latest salary entry.
 SELECT e.Name, s.Salary

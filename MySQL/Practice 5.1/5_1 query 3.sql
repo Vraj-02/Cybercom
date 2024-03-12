@@ -56,15 +56,14 @@ SELECT
 	c.customer_id, 
     c.customer_name, 
     SUM(od.price) AS total_price, 
-    SUM(
+   SUM(
 		CASE 
 			WHEN o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
 			THEN od.price ELSE 0 END
-	) AS amount_spent_last_30_days
+	) AS amount_spent_last_30_days 
 FROM customers_task3 c
-JOIN orders_task3 o
-ON o.customer_id = c.customer_id
-JOIN order_details_task3 od
-ON od.order_id = o.order_id
+JOIN orders_task3 o ON o.customer_id = c.customer_id
+JOIN order_details_task3 od ON od.order_id = o.order_id
+-- WHERE o.order_date >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)
 GROUP BY c.customer_id;
 
