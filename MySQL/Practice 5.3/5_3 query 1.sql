@@ -13,25 +13,27 @@ INSERT INTO Employees (EmployeeID, Name, Salary) VALUES
 (3, 'Aastha', 65000),
 (4, 'Helly', 70000),
 (5, 'Anjli', 75000);
-
+-- DROP TABLE orders;
 CREATE TABLE Orders (
     OrderID INT PRIMARY KEY,
     CustomerID INT,
+	EmployeeID INT,
     Revenue DECIMAL(10,2),
-    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID),
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
 );
 
-INSERT INTO Orders (OrderID, CustomerID, Revenue) VALUES
-(1, 1, 8000),
-(2, 2, 12000),
-(3, 3, 10000),
-(4, 1, 6000),
-(5, 4, 15000),
-(6, 5, 20000),
-(7, 3, 9000),
-(8, 2, 11000),
-(9, 4, 13000),
-(10, 5, 18000);
+INSERT INTO Orders (OrderID, CustomerID, EmployeeID, Revenue) VALUES
+(1, 1, 2, 8000),
+(2, 2, 1, 12000),
+(3, 3, 2, 10000),
+(4, 1, 5, 6000),
+(5, 4, 1, 15000),
+(6, 5, 1, 20000),
+(7, 3, 4, 9000),
+(8, 2, 5, 11000),
+(9, 4, 4, 13000),
+(10, 5, 1, 18000);
 
 CREATE TABLE Customers (
     CustomerID INT PRIMARY KEY,

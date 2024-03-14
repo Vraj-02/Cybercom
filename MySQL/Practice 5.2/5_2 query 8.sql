@@ -15,6 +15,7 @@ JOIN Employees e ON es.EmployeeID = e.EmployeeID
 WHERE p.Category = 'Electronics'
 GROUP BY e.EmployeeID
 HAVING COUNT(DISTINCT oi.ProductID) > 1;
+-- HAVING COUNT(DISTINCT oi.ProductID) > 5;
 
 -- SELECT e.Name
 -- FROM Customers c

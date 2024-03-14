@@ -123,7 +123,7 @@ JOIN Orders o ON c.CustomerID = o.CustomerID
 JOIN OrderItems oi ON o.OrderID = oi.OrderID
 JOIN Products p ON oi.ProductID = p.ProductID
 WHERE p.Category = 'Electronics'
-GROUP BY c.Name
+GROUP BY c.CustomerID
 ORDER BY TotalAmount DESC;
 
 
