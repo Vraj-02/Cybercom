@@ -36,7 +36,7 @@ INSERT INTO customers_task8 (customer_name) VALUES
 ('Aastha'),
 ('Helly');
 INSERT INTO customers_task8 (customer_name) VALUES
-('Anjli')
+('Anjli');
 
 INSERT INTO products_task8 (product_name, product_description, product_price) VALUES
 ('Product A', 'Description for Product A', 50.00),

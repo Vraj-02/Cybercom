@@ -51,12 +51,13 @@ INSERT INTO orders_task5 (order_id, customer_id, order_date) VALUES
 SELECT c.customer_name ,o.order_date
 FROM customers_task5 c
 INNER JOIN orders_task5 o ON c.customer_id = o.customer_id
-WHERE c.customer_id NOT IN (SELECT c1.customer_id
-FROM customers_task5 c1
-INNER JOIN orders_task5 o1 
-ON c1.customer_id = o1.customer_id
-WHERE o1.order_date >= DATE_SUB(CURDATE(), INTERVAL 90 DAY)
-GROUP BY c1.customer_id)
+WHERE c.customer_id NOT IN (
+    SELECT c1.customer_id
+	FROM customers_task5 c1
+	INNER JOIN orders_task5 o1 
+	ON c1.customer_id = o1.customer_id
+	WHERE o1.order_date >= DATE_SUB(CURDATE(), INTERVAL 90 DAY)
+	GROUP BY c1.customer_id)
 GROUP BY c.customer_id;
 
 
